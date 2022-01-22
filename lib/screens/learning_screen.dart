@@ -6,6 +6,7 @@ import 'package:flutter_chess_board/flutter_chess_board.dart';
 import 'package:provider/provider.dart';
 import 'package:chuzzlez/providers/opening_provider.dart';
 import 'package:chuzzlez/providers/puzzles_provider.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class LearningScreen extends StatefulWidget {
   LearningScreen({Key? key}) : super(key: key);
