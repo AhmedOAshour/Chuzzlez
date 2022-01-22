@@ -168,6 +168,34 @@ class _HomeState extends State<HomeScreen> {
                 ),
               )
             ],
+            if (_selectedIndex == 2) ...[
+              SizedBox(width: MediaQuery.of(context).size.width / 1),
+              OutlinedButton(
+                onPressed: () {
+                  Provider.of<UserProvider>(context, listen: false).setOpened();
+                  Navigator.pushNamed(
+                    context,
+                    '/openingsform',
+                  );
+                },
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('Add Opening',
+                          style: TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          )),
+                    ]),
+                style: OutlinedButton.styleFrom(
+                  shape: StadiumBorder(),
+                  side: BorderSide(color: Colors.black),
+                  backgroundColor: Colors.teal.shade600,
+                ),
+              )
+            ],
           ])
         ] else ...[
           ListView(
@@ -370,7 +398,7 @@ class _HomeState extends State<HomeScreen> {
                         side: BorderSide(color: Colors.black),
                         backgroundColor: Colors.teal.shade600,
                       ),
-                    )
+                    ),
                   ],
                 ),
             ],
@@ -397,6 +425,10 @@ class _HomeState extends State<HomeScreen> {
             BottomNavigationBarItem(
               icon: Icon(MyFlutterApp.puzzle),
               label: 'Manage puzzles',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.cast_for_education),
+              label: 'Manage Openings',
             ),
           ] else ...[
             BottomNavigationBarItem(

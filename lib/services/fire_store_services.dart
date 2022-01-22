@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:chuzzlez/providers/user_provider.dart';
 import 'package:chuzzlez/providers/puzzles_provider.dart';
+import 'package:chuzzlez/providers/opening_provider.dart';
 
 import 'package:chuzzlez/screens/settings_screen.dart';
 
@@ -90,6 +91,12 @@ class FireStoreServices {
     return allData;
   }
 
+  getLessons() async {
+    QuerySnapshot querySnapshot = await scoreReference.get();
+    final allData = querySnapshot.docs.map((doc) => doc.data()).toList();
+    return allData;
+  }
+
   Future getPosts() async {
     var collection = FirebaseFirestore.instance.collection('users');
     var querySnapshots = await collection.get();
@@ -111,6 +118,15 @@ class FireStoreServices {
     await FirebaseFirestore.instance
         .collection("Levels")
         .doc(levelNumber.toString())
+        .set(map);
+  }
+
+  addOpenings(String name, String description, String moves, int id) async {
+    var map = {'name': name, 'description': description, 'moves': moves};
+
+    await FirebaseFirestore.instance
+        .collection("openings")
+        .doc(id.toString())
         .set(map);
   }
 }
