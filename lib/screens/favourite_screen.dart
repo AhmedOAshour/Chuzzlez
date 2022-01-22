@@ -59,24 +59,24 @@ class _FavouritePuzzleState extends State<FavouritePuzzleScreen> {
                 ),
               )),
         ),
-        Align(
-            alignment: Alignment.topRight,
-            child: Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: MediaQuery.of(context).size.width / 100),
-                child: OutlinedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/puzzlecreator');
-                  },
-                  child: Icon(
-                    Icons.add,
-                    color: Colors.black,
-                  ),
-                  style: OutlinedButton.styleFrom(
-                    shape: StadiumBorder(),
-                    side: BorderSide(color: Colors.black),
-                  ),
-                )))
+        // Align(
+        //     alignment: Alignment.topRight,
+        //     child: Padding(
+        //         padding: EdgeInsets.symmetric(
+        //             horizontal: MediaQuery.of(context).size.width / 100),
+        //         child: OutlinedButton(
+        //           onPressed: () {
+        //             Navigator.pushNamed(context, '/puzzlecreator');
+        //           },
+        //           child: Icon(
+        //             Icons.add,
+        //             color: Colors.black,
+        //           ),
+        //           style: OutlinedButton.styleFrom(
+        //             shape: StadiumBorder(),
+        //             side: BorderSide(color: Colors.black),
+        //           ),
+        //         )))
       ]),
       Flexible(
           child: GridView.count(
